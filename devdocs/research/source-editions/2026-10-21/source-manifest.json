@@ -1,0 +1,27 @@
+[
+  {
+    "file": "software-design-context.md",
+    "sha256": "5b76e9655b8f88c259c52bef0299518e54d353e1b1c6244dbf192c864158c42a",
+    "size_bytes": 21036
+  },
+  {
+    "file": "software-design-scenarios.md",
+    "sha256": "f4cc01ff481be31adb1b5674e96cfdaf8da45653e0c1f183608006597ad70e35",
+    "size_bytes": 51374
+  },
+  {
+    "file": "software-project-debt.md",
+    "sha256": "95db908b26aeb5a4579ea7aa107d92f0e46268a1e12810ea3e342c49d56a5496",
+    "size_bytes": 27024
+  },
+  {
+    "file": "llms-and-coding-agents-in-software-project-knowledge.md",
+    "sha256": "136dfb5a7b8dc9043b077964663314c09eabff932adb92b19dc41a682c057ba8",
+    "size_bytes": 48983
+  },
+  {
+    "file": "software-project-knowledge-tools.md",
+    "sha256": "05204560fcf87f2cf29d6fbcc29ca888449a638a063bd633d9c66861f01bae25",
+    "size_bytes": 102446
+  }
+]
