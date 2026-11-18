@@ -1,0 +1,32 @@
+default_install_hook_types: [pre-commit, pre-push]
+repos:
+  # All hooks run through `uv run`, so pre-commit and CI use the *same* tool
+  # versions (the ones pinned in pyproject's dev group). No `rev` to keep in sync.
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: uv run ruff check --fix   # lint, auto-fix what is fixable
+        language: system
+        types: [python]
+
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format         # formatting
+        language: system
+        types: [python]
+
+      - id: mypy
+        name: mypy
+        entry: uv run mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+
+      - id: pytest
+        name: pytest
+        entry: uv run pytest
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-push]

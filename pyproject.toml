@@ -1,0 +1,87 @@
+[project]
+name = "cairn"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "matteo", email = "matteo.ballu@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "attrs>=26.1.0",
+    "cattrs>=26.2.1",
+    "markdown-it-py[plugins]>=4.2.0",
+    "networkx>=3.7",
+    "pygithub>=2.10.0",
+    "python-frontmatter>=1.3.0",
+    "pyyaml>=6.0.3",
+    "typer==0.29.1",
+]
+
+[project.scripts]
+cairn = "cairn.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.170.15",
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.4"
+]
+extra = [
+    "matplotlib>=3.11.2",
+]
+stubs = [
+    "types-networkx>=3.6.1.20261117",
+    "types-pyyaml>=6.0.12.20260906",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# N.B. tests are linted & formatted like the rest of the code, but exempted from
+# docstring rules below (see per-file-ignores). Mypy checks src only.
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "B",
+    "E7",
+    "E9",
+    "D",
+    "D417",
+]
+ignore = [
+    "F401",
+    "F841",
+    "D104",
+    "D105",
+
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["D"]
+
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+
+check_untyped_defs = true     # check functions core
+warn_redundant_casts = true
+warn_unused_ignores = true    # check for useless "# type: ignore"
+warn_unreachable = true       # usefull for pattern matching with a assert_never() clause
+strict_equality = true        # forbid comparison such as `1=="1"`
+
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+

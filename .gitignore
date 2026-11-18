@@ -1,0 +1,27 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+
+playground/
+
+.obsidian
+
+# Virtual environments
+.venv
+
+# IDEs
+.vscode/
+.idea/
+
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+.hypothesis/
